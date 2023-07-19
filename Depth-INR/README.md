@@ -34,7 +34,6 @@ Each network is tested using the _Whole-Scene Average Predition Error_ (WAPE), a
 <details>
 <summary>Installation (reproductability)</summary>
 <br>
-To note: We used a conda env with CUDA 13 with RTX 3090 and i10 processors on Windows. ~Hasn't been tested on other PCs yet~
 
 Using Python 3.8, and installing the following packages  
 ```
