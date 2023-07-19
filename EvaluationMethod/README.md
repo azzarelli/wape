@@ -3,13 +3,13 @@
 ## Getting Started
 We have prepared a number of scripts: `run_hypertune.bat` and `tuned_run.bat`. These were used to hyper-parameter tune models individuallly and run multiple tests of the same run (to collect error bars).
 
-If you followed the [NeRFStudio](https://github.com/nerfstudio-project/nerfstudio/) instructions on downloading the conda environment you can run these as well as the following command.
+If you followed the [NeRFStudio](https://github.com/nerfstudio-project/nerfstudio/) instructions on downloading the conda environment you can run these as well as the following command. You are not required to download nerfstudio repository as we have modified much of the code (it has since been updated so newer versions may not work).
 
 ```
 ns-train [nerfacto/instant-ngp/mipnerf]
 ```
 
-To run the tuned models the following can be used where `%%d` is the folder path which by default it `data/GT/`. This folder should contain the pregenerated data from our data synthesis method.
+To run the tuned models the following can be used where `%%d` is the folder path which by default it `data/GT/`. The `data/` folder is currently empty. Using the `DataSynthesis` code you can generate the exeplicit radiance field data and place it in `data/GT/`. [WandB](https://wandb.ai/) is used to monitor and collect results (include images).
 
 ```
 ns-train mipnerf --pipeline.datamanager.path=%%d --pipeline.datamanager.train-batch-size=4096 --optimizers.fields.optimizer.lr=5e-4 --pipeline.datamanager.loss-function-rgb=MSELoss --pipeline.datamanager.loss-function-density=L1Loss
@@ -17,9 +17,7 @@ ns-train nerfacto --pipeline.datamanager.path=%%d --pipeline.datamanager.train-b
 ns-train instant-ngp --pipeline.datamanager.path=%%d --pipeline.datamanager.train-batch-size=256 --optimizers.fields.optimizer.lr=1e-4 --pipeline.datamanager.loss-function-rgb=MSELoss --pipeline.datamanager.loss-function-density=L1Loss
 ```
 
-Note that CLI commans for Nerfstudio will not work as we have modified the framework.
-
-We have also provided the hotdog and cubeworld datasets in `data/GT_hotdog/` and `data/GT_cubeworld/`
+Note that other CLI commands for Nerfstudio will likely not work as we have modified the original implementation.
 
 ## Differences with NeRFStudio
 The Nerfstudio repository contains a lot of helpful functionality and customisation for processing NeRF data and customisation.

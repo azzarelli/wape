@@ -23,6 +23,7 @@ We ran this on an Nvidia RTX 3090 with 64GB of RAM with CUDA 11.8. Refer to sect
 2. For the depth INR experiment it is worth noting that results (particularly for SIREN) are sensitive to initialisation. While our results do not cohere with the results from [WIRE: Wavelet Implicit Neural Representations
 ](https://arxiv.org/abs/2301.05187) ([code](https://github.com/vishwa91/wire)) it is important to note that there may be redeeming factors in performance associated with more complex scenes which we have not tested for (such as those in the WIRE paper).
 
+3. For the NeRF tests we modified the original [NeRFStudio](https://github.com/nerfstudio-project/nerfstudio/) code to work with our evaluation method as there are many useful helpers. As the original code is not adept at evaluation we made several significant modifications which are disucssed in `EvaluationMethod`.
 </details>
 
 ## Details on NeRF Evaluation
