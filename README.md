@@ -1,4 +1,5 @@
 # Towards a Robust Framework for NeRF Evaluation
+**UNDERGOING FIXES**
 
 This repository contains the code release for [Towards a Robust Framework for NeRF Evaluation](https://arxiv.org/abs/2305.18079). The contents of the repository relate to the experiments in the paper. Thus, we present exemplar implementations of frameworks for seperately evaluating NeRFs and INRs using explicit radiance field representations. The code should be treated as **example** implementations of our framework - see the limitations section in the paper to understand why.
 
