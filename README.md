@@ -7,7 +7,23 @@ For NeRF Evaluations we use data extracted from Blender. This is done by running
 For INR Evaluations we tested a very simple scene (three cubes and three views) to ensure tested models attain optimum performance for evaluations. Due to its simplicity, we provide a function for data generation which is exectuted before each run. 
 
 ## Requirements
+<details>
+<summary>Requirements</summary>
+
 We ran this on an Nvidia RTX 3090 with 64GB of RAM with CUDA 11.8. Refer to sections below for more information of dependencies.
+
+</details>
+
+## Notes for transparency
+<details>
+<summary>Transparency</summary>
+
+1. In the initial arXiv submission we miscalculated the PSNR results for the depth INR experiment. Additionally, for the NeRF experiment we forgot to divide the PSNR, SSIM and LPIPS results by the batch size. We have since updated the results accordingly and note that our conclusions remain the same. 
+
+2. For the depth INR experiment it is worth noting that results (particularly for SIREN) are sensitive to initialisation. While our results do not cohere with the results from [WIRE: Wavelet Implicit Neural Representations
+](https://arxiv.org/abs/2301.05187) ([code](https://github.com/vishwa91/wire)) it is important to note that there may be redeeming factors in performance associated with more complex scenes which we have not tested for (such as those in the WIRE paper).
+
+</details>
 
 ## Details on NeRF Evaluation
 The following list indicates the relevant folders associated with data generation and evaluation of NeRFs.
