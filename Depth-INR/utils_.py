@@ -8,12 +8,13 @@ import torch
 def PSNR(preds, n_t):
 #     preds_ = torch.round(preds, decimals=6)
     n_pred = preds[:,0]
-    mse = torch.pow(torch.mean((n_t - n_pred)), 2)
+    mse = torch.mean(torch.pow((n_t - n_pred), 2))
+    
     if(mse == 0):  # MSE is zero means no noise is present in the signal .
                   # Therefore PSNR have no importance.
-        return 100
-    max_pixel = 1000
-    psnr = 20 * log10(max_pixel / torch.sqrt(mse))
+        mse = mse+0.00001
+    max_pixel = 10000
+    psnr = 10 * log10(max_pixel / torch.sqrt(mse))
     return psnr
 
 
