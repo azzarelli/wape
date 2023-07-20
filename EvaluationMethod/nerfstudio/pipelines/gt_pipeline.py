@@ -197,6 +197,7 @@ class GTPipeline(Pipeline):
         # Set data manager mode back to train
         self.model.image_data_flag = False
 
+        num = 0.0
         for idx, (image, gtimage) in enumerate(zip(IMAGES, GTIMAGES)):
             images_dict[str(idx)] = image
 
@@ -207,7 +208,12 @@ class GTPipeline(Pipeline):
                 metrics_dict['PSNR']  += self.datamanager.psnr(gtimage, predimage)
                 metrics_dict['SSIM']  += self.datamanager.ssim(gtimage, predimage)
                 metrics_dict['LPIPS'] += self.datamanager.lpips(gtimage, predimage)
+                num += 1
 
+        # Divide by number of images tested
+        metrics_dict['PSNR'] = metrics_dict['PSNR']/num
+        metrics_dict['SSIM'] = metrics_dict['SSIM']/num
+        metrics_dict['LPIPS'] = metrics_dict['LPIPS']/num
             
         self.train()
         return metrics_dict, images_dict
