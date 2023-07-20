@@ -1,7 +1,6 @@
 # Towards a Robust Framework for NeRF Evaluation
-**UNDERGOING FIXES**
 
-This repository contains the code release for [Towards a Robust Framework for NeRF Evaluation](https://arxiv.org/abs/2305.18079). The contents of the repository relate to the experiments in the paper. Thus, we present exemplar implementations of frameworks for seperately evaluating NeRFs and INRs using explicit radiance field representations. The code should be treated as **example** implementations of our framework - see the limitations section in the paper to understand why.
+This repository contains the code release for [Towards a Robust Framework for NeRF Evaluation](https://arxiv.org/abs/2305.18079). The contents of the repository relate to the experiments in the paper. The code should be treated as **example** implementations of our framework - see the limitations section in the paper to understand why.
 
 For NeRF Evaluations we use data extracted from Blender. This is done by running the python script in the `BlenderDataExtraction` folder into the Blender Python API to extract relevant data. Instructions for use are provided within the script and can be viewed in Blender. Notes for use: The implementation is a proof of concept so evalation code is not optimised for complex scenes (with many cameras and polygons) so bare this in mind when testing.
 
